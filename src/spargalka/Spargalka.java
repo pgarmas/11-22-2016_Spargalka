@@ -20,11 +20,11 @@ public class Spargalka {
     public static void main(String[] args) {
         // TODO code application logic here
         int pick = chooseFigure();
-
+        int area=0;
         switch(pick)
         {
-            case 1: square(); break;
-            case 2: rectangle(); break;
+            case 1: area=square(); break;
+            case 2: area=rectangle(); break;
             case 3: rightTriangle(); break;
             case 4: circle(); break;
             case 5: parallelogram(); break;
@@ -32,24 +32,34 @@ public class Spargalka {
                 System.out.println("Выбирать надо было от одного до пяти");
 	    break;    
         }
+        
+        
+        System.out.println("Area: "+area+ "cm2");  
+
+        
+        repeat("12312312312123", 5);
+        repeat("Саша", 3);
+        
+        x3(pick);
     }
     
-    public static void square()
+    public static int square()
     {
         int side;
         side=1;
         
+       
         System.out.println("Enter side: ");
         Scanner in = new Scanner(System.in);
         side = in.nextInt();
         
         int area=side*side;
         
-        System.out.println("Area: "+area+ "cm2");
+        return area;
         
     }
     
-    public static void rectangle()
+    public static int rectangle()
     {
       int width;
         width=1;
@@ -65,7 +75,8 @@ public class Spargalka {
         
         int area=width*length;
         
-        System.out.println("Area: "+area+ "cm2");  
+        return area;
+        
     }
 
     private static void rightTriangle() {
@@ -132,6 +143,25 @@ public class Spargalka {
         int pick = snr.nextInt();
         return pick;
     }
+    private static void repeat(String text, int times){
+        
+        for (int i = 1; i <= times; i++){
+          System.out.println(text);  
+        }
+        
+        
+    }
+
+    private static int x3(int pick) {
+        
+        int kord=pick*3;
+        return kord;
+       
+    }
     
+    private static String getSasha(){
+        
+        return "Саша";
+    }
 }
     
