@@ -21,17 +21,17 @@ public class Spargalka {
         // TODO code application logic here
         int pick = chooseFigure();
         int area=0;
-        switch(pick)
-        {
-            case 1: area=square(); break;
-            case 2: area=rectangle(); break;
-            case 3: rightTriangle(); break;
-            case 4: circle(); break;
-            case 5: parallelogram(); break;
-            default: 
-                System.out.println("Выбирать надо было от одного до пяти");
-	    break;    
-        }
+//        switch(pick)
+//        {
+//            case 1: area=square(5); break;
+//            case 2: area=rectangle(); break;
+//            case 3: rightTriangle(); break;
+//            case 4: circle(); break;
+//            case 5: parallelogram(); break;
+//            default: 
+//                System.out.println("Выбирать надо было от одного до пяти");
+//	    break;    
+//        }
         
         
         System.out.println("Area: "+area+ "cm2");  
@@ -43,40 +43,16 @@ public class Spargalka {
         x3(pick);
     }
     
-    public static int square()
+    public static int square(int side)
     {
-        int side;
-        side=1;
-        
-       
-        System.out.println("Enter side: ");
-        Scanner in = new Scanner(System.in);
-        side = in.nextInt();
-        
         int area=side*side;
-        
         return area;
-        
     }
     
-    public static int rectangle()
+    public static int rectangle(int width, int length)
     {
-      int width;
-        width=1;
-      int length;
-        length=1;
-        
-        System.out.println("Enter width: ");
-        Scanner in = new Scanner(System.in);
-        width = in.nextInt();
-        
-        System.out.println("Enter length: ");
-        length = in.nextInt();
-        
         int area=width*length;
-        
         return area;
-        
     }
 
     private static void rightTriangle() {
@@ -98,18 +74,8 @@ public class Spargalka {
         
     }
 
-    private static void circle() {
-        
-        int R;
-        R=1;
-        
-        System.out.println("Enter R: ");
-        Scanner in = new Scanner(System.in);
-        R = in.nextInt();
-        
-        int area=Math.round((float)(Math.PI*R*R));
-        
-        System.out.println("Area: "+area+ "cm2");
+    public static float circle(int R) {
+        return (float)Math.PI*R*R;
     }
 
     private static void parallelogram() {
@@ -159,9 +125,20 @@ public class Spargalka {
        
     }
     
-    private static String getSasha(){
+    public static String getSasha(){
         
         return "Саша";
     }
+    
+    public float getTotalCost(int quantity)
+    {
+        float price;
+        if (quantity>100) {
+            price=quantity*0.9f;
+        }else price=quantity;
+        return price;
+    }
+    
+    
 }
     
